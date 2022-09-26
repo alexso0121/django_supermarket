@@ -1,0 +1,59 @@
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        {% extends "base.html" %}
+        {% load static %}
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% block content %}
+        <div class="reg" style="display:block ;background-color:aliceblue;width:2000px;margin-left:5px;font-size: 30px;" >
+            <p><strong style="font-size:50px ;">Your Purchase list :</strong></p>
+            {% for item in purchase_dict%}
+           
+           <form action="{% url 'web:delete' %}">
+            {{item}}
+            <input name={{item}} style="height: 40px;width:100px" type="submit" value="delete" >
+        </form>
+           {% endfor %}
+           <br><p><strong>Total price:${{total_price}}</strong></p><br>
+           
+            <p>please choose your payment method:</p>
+           <form action="{% url 'web:payment' %}">
+                <select name="payment" id="payment">
+                    <option value=""></option>
+                <option value="visa">visa</option>
+                <option value="payme">payme</option>
+                <option value="paypal">paypal</option>
+                <option value="Alipay">Alipay</option>
+                </select><br>
+
+                <br><p>Do you want a email?:<p>
+                <select name="email" id="email">
+                    <option value=""></option>
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                </select><br><br>
+
+                <br><p>Please choose your branch for collecting your products:<p>
+                    <select name="branch" id="branch">
+                        <option value=""></option>
+                        <option value="Yuen Long">Yuen Long Branch</option>
+                        <option value="Kwun Tong">Kwan Tong Branch</option>
+                        <option value="Causeway Bay">Causeway Bay Branch</option>
+                    </select><br><br><br>
+                <input style="height: 40px;width:120px" type="submit" value="submit">
+            
+
+                </form>
+        </div>
+        
+        {% endblock %}
+
+    </body>
+    </html>
+
+   

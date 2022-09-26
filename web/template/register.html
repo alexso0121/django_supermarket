@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% include 'web/includes/messager.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div style="width: 2250px;height:800 ;" class="reg">
+        <p style="font-size:30px;"><strong>Register:</strong></p>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn" style="background-color:wheat; color:blue" type="submit">register</button>
+        </form>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        If you already have an account <a href="{% url 'web:login' %}" target="blank"><strong>login</strong></a> instead.
+    </div>
+    
+ <link rel="stylesheet" href="{% static 'polls/reg.css' %}">
+{% endblock %}

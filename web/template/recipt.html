@@ -1,0 +1,39 @@
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        {% extends "base.html" %}
+        {% load static %}
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% block content %}
+        <div class="reg" style="display:block ;background-color:aliceblue;margin-left:5px;" >
+            <p><center><u><strong style="font-size:50px ">Recipt</strong></u></center></p>
+            <strong style="font-size:30px ;"><p> Customer Name : {{username}}</p></strong>
+            <p><strong style="font-size:30px ;">Your Purchase list :</strong></p>
+            {% for item in purchase_dict%}
+           <p style="font-size:30px ">{{item}}</p>
+           {% endfor %}
+           <br><p><strong style="font-size:30px ;" ></p>
+           <p><strong>Payment method :</strong> {{payment_method}}</p>
+           <p><strong>{{final_price}}</strong> </p>
+           <p><strong>Purchase time : {{buytime}}</strong> </p>
+           <p><strong>Take Address:{{branch}}</strong> </p>
+           <p><strong>Take Date : {{take_day}}</strong> </p>
+           {% if email %}
+           <br><strong><p>The recipt has sent to your mailbox!</p></strong>
+
+            {% endif %}
+            <br><b><p style="bottom:20px ;"><center><strong>Welcome for your next visit!</strong></center></p>
+        
+        </div>
+        
+        {% endblock %}
+
+    </body>
+    </html>
+
+            

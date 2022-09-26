@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{%block content%}
+{% include 'messager.html' %}
+
+<div style="height:500px ;width:2000px;margin: 0%;" class="log">
+    <p style="font-size:30px ;"><strong>login:</strong></p>
+    {% load static %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+    </form>
+    if you do not have an account <a href="{% url 'web:register' %}"target="blank"><strong>register here</strong></a>!
+</div>
+<link rel="stylesheet" href="{% static 'polls/log.css' %}">
+{% endblock %}

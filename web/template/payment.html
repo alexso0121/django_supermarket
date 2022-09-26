@@ -1,0 +1,32 @@
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        {% extends "base.html" %}
+        {% load static %}
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% block content %}
+        <div class="reg" style="display:block;margin-left: 5px;" >
+            <p><strong style="font-size:30px ;">Comfirmation :</strong></p><br>
+            <p><strong>Your order is {{purchase_dict}}</strong></p>
+            <p><strong>Branch chosen : {{branch}}</strong></p>
+            <p><strong>Your payment method : {{payment_method}}</strong> </p>
+            <p><strong style="font-size:30px ;">Overall Price :</strong></p>
+            
+                <strong><p style="font-size:30px ;">{{final_price}}</p></strong><br>
+                <a  href="{% url 'web:recipt' %} " class="btn btn-primary">Comfirm Payment</a>
+            
+           <a href="{{%url 'web:purchase'}%">back to previous page</a>
+        </div>
+        
+        
+        {% endblock %}
+
+    </body>
+    </html>
+
+            

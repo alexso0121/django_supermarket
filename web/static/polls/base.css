@@ -1,0 +1,68 @@
+
+.navbar {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color:plum;
+     display:block;
+     font-size: 30px;
+}
+
+li {
+     float: right;
+     border-right:1px solid white;
+     margin:0
+     
+     
+}
+li:first-child {
+     border-right: none;
+     
+   }
+
+.title{
+     float:left;
+}
+.title_text{
+     font-family: cursive;
+     size:30px;
+     border-right:none
+}
+li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-family: cursive;
+     
+   }
+
+
+
+li a:hover {
+     background-color :paleturquoise;
+   }
+
+   
+img {
+     float: right;
+     margin: 2%;
+     height: 20%;
+     width: 30%
+}
+.content{
+     font-size: 30px;
+     margin-top: 2%;
+     padding:0%;
+     font-size: 10px;
+     display:grid;
+     margin-left: 5px;
+
+     
+     
+     
+
+
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% include 'web/includes/messager.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div style="display:block ;background-color:aliceblue;">
+        
+        <p><strong style="font-size:50px">Updated discount:</strong></p>
+        <p style="font-size:30px ;"><strong>Summer discount : </strong><br>online payment can have 90% discount<br>vaild-date:09/2022-10/2024</p><br>
+
+        <p style="font-size:30px ;" ><strong>Visa discount: </strong><br>customers pay with visa will have 90% discount<br>vaild-date:10/2021-10/2025</p><br>
+        <p style="font-size:30px ;" ><strong>Supermarket discount: </strong><br>customers who total price are above $300 have $20 discount<br>vaild-date:available in all period</p>
+
+
+        <br><p style="color:grey ;font-size: 10px;">* acount can be acummulated</p><br>
+        
+    
+    </div>
+    
+ <link rel="stylesheet" href="{% static 'polls/reg.css' %}">
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% include 'web/includes/messager.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div  style="display:block ;background-color:aliceblue;height:700px ;font-size: 30px;">
+       <h1>Personal infomation</h1><br>
+        <p>Username:{{username}}</p><br>
+        <p>Password:{{password}}</p><br>
+        <p>Email:{{email}}</p><br>
+       <p>Previous order:{{purchase_history}}
+    </p>
+   
+     
+       
+    </div>
+    
+ <link rel="stylesheet" href="{% static 'polls/reg.css' %}">
+{% endblock %}

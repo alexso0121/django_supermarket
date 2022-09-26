@@ -1,0 +1,94 @@
+<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    {% extends "base.html" %}
+    {% load static %}
+    {% include 'messager.html' %}
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+{% block content %}
+ 
+  <body>
+    <div style="display:block ;background-color: aliceblue;">
+      <div style="background-color:aliceblue ;height: 400px;width: 4000px;margin-top: 0%;" class="container"> 
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            
+            <div style="height:400px ;" class="item active">
+              <img  style="height:400px ;width: 3000px;margin: 0%;" src="{% static 'polls/summer.jpg'%}" alt="Los Angeles" style="width:100%;">
+          
+              <div style="font-size:black ;" class="carousel-caption">
+                  <h3 style="font-size:black ;">summer discount</h3>
+                  <p style="font-size:black ;">90% for online shoppers</p>
+                </div> 
+            </div>
+      
+            <div  style="height:400px ;" class="item">
+              <img style="height:400px ;width: 3000px;margin: 0%;" src="{% static 'polls/supermarket.jpg'%}" alt="Los Angeles" style="width:100%;">
+              <div style="font-size:black ;" class="carousel-caption">
+                  <h3 style="font-size:black ;">supermarket discount</h3>
+                  <p style="font-size:black ;">total_price $300 or above can have $20 discount</p>
+                </div> 
+            </div>
+          
+            <div  style="height:400px ;" class="item">
+              <img  style="height:400px ;width: 3000px;margin: 0%;" src="{% static 'polls/visa.jpg'%}" alt="Los Angeles" style="width:100%;">
+              <div style="font-size:black ;" class="carousel-caption">
+                  <h3 style="font-size:black ;">visa discount</h3>
+                  <p style="font-size:black ;">90% discount for using visa as online payment</p>
+                </div> 
+            </div>
+        
+          </div>
+      
+      
+          
+         <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+      </div>
+  </div>
+      </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    {% for ser in series %}
+    <div style="position:sticky ; margin-top: 20px;width:200px ;" class= "row" >
+        <div class="col-sm-6">
+            <div class="card mb-3 " style="width: 50rem;">
+                <img style="margin:0% ;" id='photo'src="{{ser.photo}}" class="card-img-top" alt="...">
+            
+                <div style="font-size:30px ;"class="card-body"\>
+                <h5 style="font-size:30px ;"class="card-title">{{ser.title}}</h5>
+                
+                <p class="card-text">{{ser.summary}}</p>
+                <a href={{ser.url}} class="btn btn-primary">click here</a>
+                
+                </div>
+            </div>
+      </div>
+      {% endfor %}
+    </div>
+   
+  
+  </body>
+</html>
+{% endblock %}

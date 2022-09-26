@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% include 'web/includes/messager.html' %}
+{% load static %}
+
+
+{% block content %}
+   <h1>Update form</h1>
+   <form action="{%url 'web:update_data'%}" method="post">
+      {% csrf_token %}
+      <table style="font-size:30px ;">
+         <tr>
+            <td>Username:</td>
+            <td><input type="text" name="name",value={{username}} ></td>
+         </tr>
+         <tr>
+            <td>Password:</td>
+            <td><input type="text" name="password" ,value={{password}}></td>
+         </tr>
+         <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email",value={{email}} ></td>
+         </tr>
+      </table>
+      <br><button class="btn" style="background-color:wheat; color:blue" type="submit">register</button>
+   </form>
+{% endblock %}

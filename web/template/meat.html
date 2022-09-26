@@ -1,0 +1,44 @@
+
+<head>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        {% extends "base.html" %}
+        {% load static %}
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    {% block content %}
+     
+      <body>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        {% for ser in meat_ser %}
+        <div class= "row" >
+            <div class="col-sm-6">
+                <div class="card mb-3 " style="width: 25rem;font-size: 30px;">
+                    <img style="height: 250px;margin: 0%;" id='photo'src="{{ser.photo}}" class="card-img-top" alt="...">
+                
+                    <div style="font-size:30px ;" class="card-body">
+                    <h5 style="font-size:30px ;" class="card-title">{{ser.Name}}</h5>
+                    
+                    <p class="card-text">Price:${{ser.Price}}</p><br>
+                    <form action="" >
+                    
+                        <label form='fname'>Qualitiy:</label>
+                        <input type="number" name="{{ser.Name}}">
+                        <input type="submit" value="Buy">
+                    </form>
+                   
+                    
+                    </div>
+                </div>
+          </div>
+          {% endfor %}
+        </div>
+      </body>
+    </html>
+    <a href="{% url 'web:purchase' %}">purchase</a><a href="{% url 'web:index'%}">back to previous page</a>
+    {% endblock %}
+    
