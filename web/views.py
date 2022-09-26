@@ -12,7 +12,7 @@ from .form import NewUserForm, formnew
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from .email import sendmail
-from .models import newuser, update_user_profile
+from .models import newuser
 import datetime
 
 
@@ -86,7 +86,6 @@ def register_request(request):
         # New user have new column 'email' have form model
         if form.is_valid():
             user = form.save()
-            update_user_profile
 
             # save user data
             username = form.cleaned_data
@@ -316,12 +315,12 @@ def discount(request):
 
 
 def info(request):
-    if request.user.newuser.purchase_history:
-        purchase_history = request.user.newuser.purchase_history
+    # if request.user.newuser.purchase_history:
+    #purchase_history = request.user.newuser.purchase_history
     username = request.user.username
     password = request.user.password
     email = request.user.email
-    return render(request=request, template_name='info.html', context={'purchase_history': purchase_history,
-                                                                       'username': username,
-                                                                       'password': password,
-                                                                       'email': email})
+    return render(request=request, template_name='info.html', context={  # 'purchase_history': purchase_history,
+        'username': username,
+        'password': password,
+        'email': email})
