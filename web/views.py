@@ -285,12 +285,13 @@ def recipt(request):
     history.purchase_history = f' {buytime} : {purchase_dict}'
     history.save()
 
+    take_day = datetime.datetime.now() + datetime.timedelta(days=3)
+
     if email == True:
         # sending email
         email = sendmail(user_email, purchase_dict,
                          payment_method, fin_price, branch, take_day)
 
-    take_day = datetime.datetime.now() + datetime.timedelta(days=3)
     return render(request=request,
                   template_name='recipt.html',
                   context={'purchase_dict': purchase_list, 'payment_method': payment_method,
